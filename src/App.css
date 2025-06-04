@@ -1,0 +1,147 @@
+/* Dark code-themed background with subtle code snippet style */
+.app-container {
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 40px 20px;
+  font-family: 'Fira Code', monospace, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #c8d6e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Dark overlay to increase text readability */
+.app-container::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(10, 10, 25, 0.75);
+  z-index: -1;
+}
+
+/* Header styling */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  user-select: none;
+}
+
+.profile-pic {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #00ffab;
+  box-shadow: 0 8px 20px rgba(0, 255, 171, 0.7);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: rotateY(20deg) rotateX(10deg);
+}
+
+.title {
+  font-size: 3rem;
+  margin: 15px 0 5px 0;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #00ffab;
+  text-shadow: 0 0 15px #00ffab;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #8bd7cc;
+  margin-bottom: 0;
+}
+
+/* Main content layout */
+.main-content {
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding-bottom: 50px;
+}
+
+/* Cards with 3D effect */
+.card-3d {
+  background: rgba(18, 18, 34, 0.85);
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow:
+    0 6px 12px rgba(0, 255, 171, 0.3),
+    0 14px 28px rgba(0, 255, 171, 0.15);
+  backdrop-filter: blur(12px);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+  color: #c8d6e5;
+}
+
+.card-3d:hover {
+  transform: rotateY(10deg) rotateX(6deg);
+  box-shadow:
+    0 12px 24px rgba(0, 255, 171, 0.6),
+    0 28px 56px rgba(0, 255, 171, 0.4);
+}
+
+.card-3d h3 {
+  margin-top: 0;
+  color: #00ffab;
+  text-shadow: 0 0 10px #00ffab;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.card-3d p,
+.card-3d ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c8d6e5;
+  margin-bottom: 1rem;
+}
+
+.card-3d ul {
+  list-style: square inside;
+  padding-left: 0;
+}
+
+.card-3d ul li {
+  margin-bottom: 8px;
+}
+
+/* Link styles */
+a {
+  color: #00ffab;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00cba9;
+  text-decoration: underline;
+}
+
+/* Resume button styling */
+.resume-button {
+  background-color: #00ffab;
+  color: #121222;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #00e09a;
+}
